@@ -1,3 +1,6 @@
+/* --- GalacTech FRC 4926 Theme --- */
+/* Deep space dark mode with Groovin' Green accents */
+
 * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -8,30 +11,41 @@
 body { 
     display: flex; 
     height: 100vh; 
-    background-color: #f8f9fa; 
+    background-color: #0d1117; /* Deep space dark background */
+    color: #c9d1d9; /* Soft tech gray for standard text */
     overflow: hidden; 
 }
 
 /* --- Sidebar Styles --- */
 .sidebar { 
     width: 260px; 
-    background: #2c3e50; 
+    background: #161b22; /* Slightly lighter dark shade for sidebar */
     color: white; 
     transition: width 0.3s ease; 
     display: flex; 
     flex-direction: column; 
-    justify-content: space-between; /* Pushes bottom section down */
+    justify-content: space-between; 
     white-space: nowrap; 
+    border-right: 1px solid #30363d;
 }
 
 .sidebar.collapsed { 
     width: 0; 
+    border-right: none;
 }
 
 .sidebar-header { 
     padding: 20px; 
-    background: #1a252f; 
+    background: #0d1117; 
     text-align: center; 
+    border-bottom: 2px solid #2ea043; /* GalacTech Green Accent */
+}
+
+.sidebar-header h2 {
+    color: #2ea043; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
 }
 
 .nav-links { 
@@ -42,7 +56,7 @@ body {
 .nav-links li a, .dropdown-btn { 
     display: block; 
     padding: 15px 25px; 
-    color: #ecf0f1; 
+    color: #c9d1d9; 
     text-decoration: none; 
     font-size: 16px; 
     border: none; 
@@ -50,18 +64,20 @@ body {
     width: 100%; 
     text-align: left; 
     cursor: pointer; 
-    transition: background 0.2s; 
+    transition: all 0.2s ease; 
 }
 
 .nav-links li a:hover, .dropdown-btn:hover { 
-    background: #34495e; 
+    background: #2ea043; /* Green highlight on hover */
+    color: #ffffff;
 }
 
 /* --- Bottom Sidebar Section --- */
 .sidebar-bottom {
     margin-top: auto; 
-    background: #1a252f; 
+    background: #161b22; 
     padding-bottom: 20px; 
+    border-top: 1px solid #30363d;
 }
 
 .sidebar-bottom .dropdown-container {
@@ -71,22 +87,25 @@ body {
 /* --- Dropdown Styles --- */
 .dropdown-menu { 
     list-style: none; 
-    background: #1f2c38; 
+    background: #0d1117; /* Dark dropdown interior */
     display: none; 
 }
 
 .dropdown-menu.show { 
     display: block; 
+    border-left: 3px solid #2ea043; /* Green left border to indicate open state */
 }
 
 .dropdown-menu a { 
     padding-left: 45px; 
     font-size: 14px; 
-    color: #bdc3c7;
+    color: #8b949e;
 }
 
 .dropdown-menu a:hover {
-    color: #ffffff;
+    color: #2ea043;
+    background: transparent;
+    padding-left: 50px; /* Cool slight indent animation on hover */
 }
 
 .arrow { 
@@ -98,6 +117,10 @@ body {
     transform: rotate(180deg); 
 }
 
+.dropdown-btn.active {
+    color: #2ea043;
+}
+
 /* --- Main Content Styles --- */
 .main-content { 
     flex: 1; 
@@ -107,45 +130,59 @@ body {
 }
 
 header { 
-    background: white; 
+    background: #161b22; 
     padding: 15px 25px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    border-bottom: 1px solid #30363d;
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
 }
 
 .toggle-btn { 
-    background: #3498db; 
+    background: #238636; /* Darker tech green for button */
     color: white; 
-    border: none; 
+    border: 1px solid rgba(240, 246, 252, 0.1); 
     padding: 10px 15px; 
     cursor: pointer; 
-    border-radius: 4px; 
+    border-radius: 6px; 
     font-size: 16px; 
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .toggle-btn:hover { 
-    background: #2980b9; 
+    background: #2ea043; 
+    transform: scale(1.02);
 }
 
 .user-status { 
     font-weight: 500; 
-    color: #555; 
+    color: #8b949e; 
 }
 
 .highlight { 
-    color: #3498db; 
+    color: #2ea043; 
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 8px;
 }
 
 .content-area { 
     padding: 40px; 
     overflow-y: auto; 
+    background: radial-gradient(circle at top left, #1f242c, #0d1117); /* Subtle metallic/space gradient */
+    height: 100%;
 }
 
 .content-area h1 {
-    margin-bottom: 10px;
-    color: #2c3e50;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-shadow: 0px 0px 10px rgba(46, 160, 67, 0.2); /* Slight green glow */
+}
+
+.content-area p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
 }
